@@ -1,1 +1,1 @@
-print("Selam")
+Hai
