@@ -9,18 +9,3 @@ except ZeroDivisionError:
 finally:
     print("Yakarsa Dünyayı Garipler Yakar")
 print("Program Çalışmaya Devam Ediyor")
-üüüüüüüüüüüüüüüüü
-ü
-ü
-ü
-ül
-
-ü
-ü
-3112314
-ez,l yadıngrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
-babapro
-eand
-be may loveliy guy
-for that if you
-truelmandder
