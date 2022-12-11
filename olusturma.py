@@ -1,4 +1,4 @@
-liste = ["Tuna","Aydın",
+liste = ["Tuna","Aydın","Ceren",
     "Özlem","Bora","Emre","Muhammed","Naz","Ahmet","Muruvet","Taha","Iclal","Nur","Akın","Busra"]
 import os 
 dosyaismi = "07_01_Giris"
