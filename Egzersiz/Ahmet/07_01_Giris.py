@@ -1,3 +1,4 @@
-import sys, os
+# dosya işlemleri
+open()
 
 
