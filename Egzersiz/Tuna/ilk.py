@@ -16,4 +16,4 @@ if(tektane!=0):
     print("Tek Sayıların Ortalaması : ",tekToplam/tektane)
 if(ciftAdet!=0):
     print("Çift Sayıların Ortalaması : ",ciftToplam/ciftAdet)
- 
+print("zii")
