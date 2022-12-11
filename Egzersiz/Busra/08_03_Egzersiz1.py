@@ -15,3 +15,4 @@ dosyada ilk satırda yer alan 72 ve 35 değerlerini
 bir değişkene aktarıp ekrana yazdırın oluşturduğunuz fonksiyon üzerinde
 değişiklik yaparak devam edebilirsiniz
 """
+
