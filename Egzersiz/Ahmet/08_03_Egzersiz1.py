@@ -1,6 +1,6 @@
-yol = "/workspace/pythonfundamentals/diabetes.csv"
-dosya = open(yol, "r+")
 def dosya_oku():
+    yol = "/workspace/pythonfundamentals/diabetes.csv"
+    dosya = open(yol, "r+")
     print("1",dosya.readline())
     print("2",dosya.readline())
     print("3",dosya.readline())

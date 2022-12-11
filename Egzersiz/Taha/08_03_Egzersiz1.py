@@ -6,3 +6,7 @@ python fonksiyonunu yazınız.
 """
 
 
+def okuma():
+    dosyaYolu = "/workspace/pythonfundamentals/Dokumanlar/diabetes.csv"
+    dosya = open(dosyaYolu,"r+")
+    print(dosya.readlines(5))

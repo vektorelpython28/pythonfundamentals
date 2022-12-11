@@ -1,3 +1,4 @@
-def okuma():
+def dosyaOkuma():
     dosya = open("diabetes.csv","r+")
-    print(dosya.readlines(5))
+    for i in range(5):
+        print(dosya.readline())
