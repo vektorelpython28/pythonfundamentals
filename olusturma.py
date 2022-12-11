@@ -1,7 +1,7 @@
 liste = ["Tuna","Aydın","Ceren",
     "Özlem","Bora","Emre","Muhammed","Naz","Ahmet","Muruvet","Taha","Iclal","Nur","Akın","Busra"]
 import os 
-dosyaismi = "07_01_Giris"
+dosyaismi = "08_01_DosyaModlari"
 folderName = "Egzersiz"
 for item in liste:
     if not os.path.exists(os.path.join(folderName,item)):

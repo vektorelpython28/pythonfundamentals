@@ -14,6 +14,6 @@ for i in range(n):
         ciftToplam+=sayi
 if(tektane!=0):
     print("Tek Sayıların Ortalaması : ",tekToplam/tektane)
-if(ciftAdet!=0):
-    print("Çift Sayıların Ortalaması : ",ciftToplam/ciftAdet)
-print("zii")
+if(cifttane!=0):
+    print("Çift Sayıların Ortalaması : ",ciftToplam/cifttane)
+print("zii","wğüüüüüü 31 üüüüüüüüüüü","tağmamam :3  bing ciling <3")
