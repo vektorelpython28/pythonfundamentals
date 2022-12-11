@@ -6,3 +6,4 @@ def dosya_oku():
     print("3",dosya.readline())
     print("4",dosya.readline())
     print("5",dosya.readline())
+a = dosya.readline()
