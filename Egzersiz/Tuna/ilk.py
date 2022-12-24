@@ -16,4 +16,4 @@ if(tektane!=0):
     print("Tek Sayıların Ortalaması : ",tekToplam/tektane)
 if(cifttane!=0):
     print("Çift Sayıların Ortalaması : ",ciftToplam/cifttane)
-print("zii","wğüüüüüü 31 üüüüüüüüüüü","tağmamam :3  bing ciling <3")
+print("komonoko")

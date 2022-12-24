@@ -1,4 +1,3 @@
-# dosya işlemleri
-open()
+
 
 
