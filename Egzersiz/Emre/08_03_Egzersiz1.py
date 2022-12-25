@@ -15,6 +15,5 @@ if cevap == "G" or cevap == "g":
             hak += 1
 if cevap == "K" or cevap == "k":
     belirlenen_sifre = input("Bir Şifre Belirleyin : ")
-    dogru_sifre = belirlenen_sifre
-    print("Kaydınız Başarılı")
-    
+    if len(belirlenen_sifre) < 8:
+        
