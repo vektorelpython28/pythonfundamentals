@@ -15,6 +15,8 @@ dosya = open(yol,"r+")
 # print("2",dosya.readline(4))
 # print("3",dosya.readline(5))
 # print("4",dosya.readline(10))
-
+# print("4",dosya.readline())
+# print("4",dosya.readline())
+# print("4",dosya.readline())
 ################# readlines
-print("1",dosya.readlines())
+# print("1",dosya.readlines())
