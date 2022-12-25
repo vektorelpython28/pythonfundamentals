@@ -14,7 +14,7 @@ if cevap == "G" or cevap == "g":
             girilen_sifre = input("Lütfen Tekrar Deneyiniz:  ")
             hak += 1
 if cevap == "K" or cevap == "k":
-    print("Bir Şifre Belirleyin")
-    belirlenen_sifre = input(": ")
+    belirlenen_sifre = input("Bir Şifre Belirleyin : ")
     dogru_sifre = belirlenen_sifre
     print("Kaydınız Başarılı")
+    
