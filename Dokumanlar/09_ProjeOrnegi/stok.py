@@ -1,5 +1,5 @@
 from db import dosyaislem as dt
-from tools import screentools as sct
+from tools import screentools as sct,SIDUTool as sidu
 dt.alanlar = ["Ürün Adı","Ürün Adet","Ürün Fiyat"]
 dt.yol = dt.yol.format("stok.csv")
 
@@ -32,53 +32,30 @@ def stokmenu():
                     dt.dosyaYazma(dosya,metin) # bilgiler dosyaya yazıldı
                     dt.dosyaKaydet(dosya) # dosya kaydedildi
                 if islem == 2: # ürün güncelleme
-                    kayitListe = dt.dosyaOkuList(dosya)
                     dt.verilistele(dosya)
                     kayitNum = input("Düzenlemek istediğiniz kaydın numarasını giriniz:") 
-                    metin = dt.verigiris(dt.alanlar) 
-                    kayitListe[int(kayitNum)-1] = metin
-                    dt.dosyaListeKaydet(dosya, kayitListe)
+                    metin = dt.verigiris(dt.alanlar)
+                    sidu.Guncelle(kayitNum, dosya, metin)
                 if islem == 3:
                     kayitListe = dt.dosyaOkuList(dosya)
                     dt.verilistele(dosya)
                     kayitNum = input("Silmek istediğiniz kaydın numarasını giriniz:")
-                    del kayitListe[int(kayitNum)-1]
-                    dt.dosyaListeKaydet(dosya, kayitListe)
+                    sidu.Silme(kayitNum, dosya)
                     devam = input("Devam Etmek İçin Bir Tuşa Basınız...")
                 if islem == 4:
-                    sct.clear()
-                    results = []
-                    search = input("Anahtar Kelime ya da sayıyı giriniz (Tüm Kayıtlar İçin *): ")
-                    kayitListe = dt.dosyaOkuList(dosya)
-                    if search == "*":
-                        for num,item in enumerate(kayitListe):
-                            print(num,"-",*item.split(";"),end="")
-                    else:
-                        for num,item in enumerate(kayitListe):
-                            for rec in item.split(";"):
-                                if str(rec).count(search) > 0:
-                                    results.append((num,item))
-                        for num,result in results:
-                            print(num,"-",*result.split(";"),end="")
-                    devam = input("Devam Etmek İçin Bir Tuşa Basınız:")
+                    sidu.Arama(dosya)
                 if islem == 5:
                     kayitListe = dt.dosyaOkuList(dosya)
                     dt.verilistele(dosya)
                     kayitNum = input("Düzenlemek istediğiniz kaydın numarasını giriniz:") 
                     stokBilgisi = input("Stok Bilgisini Giriniz:")
-                    satir = kayitListe[int(kayitNum)-1].split(";")
-                    satir[1] = stokBilgisi
-                    kayitListe[int(kayitNum)-1] = ";".join(satir) 
-                    dt.dosyaListeKaydet(dosya, kayitListe)
+                    sidu.AlanGuncelle(1, kayitNum, dosya, stokBilgisi)
                 if islem == 6:
                     kayitListe = dt.dosyaOkuList(dosya)
                     dt.verilistele(dosya)
                     kayitNum = input("Düzenlemek istediğiniz kaydın numarasını giriniz:") 
                     fiyatBilgisi = input("Fiyat Bilgisini Giriniz:")
-                    satir = kayitListe[int(kayitNum)-1].split(";")
-                    satir[2] = fiyatBilgisi
-                    kayitListe[int(kayitNum)-1] = ";".join(satir) 
-                    dt.dosyaListeKaydet(dosya, kayitListe)
+                    sidu.AlanGuncelle(2, kayitNum, dosya, fiyatBilgisi)
             if islem == 7:
                 anahtar = 0
     else:
