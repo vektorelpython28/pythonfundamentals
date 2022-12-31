@@ -16,7 +16,6 @@ def anamenu():
         islem = input(menu)
         sct.clear()
         if islem == "2":
-            
             if not stok.stokmenu():
                 pass 
                 # TODO hata ekranına yönlendirme

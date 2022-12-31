@@ -17,7 +17,6 @@ def stokmenu():
     İşlem Seçiniz:
     """
     anahtar = 1
-
     while anahtar == 1:
         sct.clear()
         islem = input(menu)
@@ -45,7 +44,7 @@ def stokmenu():
                     kayitNum = input("Silmek istediğiniz kaydın numarasını giriniz:")
                     del kayitListe[int(kayitNum)-1]
                     dt.dosyaListeKaydet(dosya, kayitListe)
-                    devam = input("Devam Etmek İçin Bir Tuşa Basınız:")
+                    devam = input("Devam Etmek İçin Bir Tuşa Basınız...")
                 if islem == 4:
                     sct.clear()
                     results = []
@@ -62,7 +61,24 @@ def stokmenu():
                         for num,result in results:
                             print(num,"-",*result.split(";"),end="")
                     devam = input("Devam Etmek İçin Bir Tuşa Basınız:")
-
+                if islem == 5:
+                    kayitListe = dt.dosyaOkuList(dosya)
+                    dt.verilistele(dosya)
+                    kayitNum = input("Düzenlemek istediğiniz kaydın numarasını giriniz:") 
+                    stokBilgisi = input("Stok Bilgisini Giriniz:")
+                    satir = kayitListe[int(kayitNum)-1].split(";")
+                    satir[1] = stokBilgisi
+                    kayitListe[int(kayitNum)-1] = ";".join(satir) 
+                    dt.dosyaListeKaydet(dosya, kayitListe)
+                if islem == 6:
+                    kayitListe = dt.dosyaOkuList(dosya)
+                    dt.verilistele(dosya)
+                    kayitNum = input("Düzenlemek istediğiniz kaydın numarasını giriniz:") 
+                    fiyatBilgisi = input("Fiyat Bilgisini Giriniz:")
+                    satir = kayitListe[int(kayitNum)-1].split(";")
+                    satir[2] = fiyatBilgisi
+                    kayitListe[int(kayitNum)-1] = ";".join(satir) 
+                    dt.dosyaListeKaydet(dosya, kayitListe)
             if islem == 7:
                 anahtar = 0
     else:
