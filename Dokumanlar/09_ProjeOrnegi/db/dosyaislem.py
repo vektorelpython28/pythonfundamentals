@@ -1,9 +1,9 @@
 import os
 # db/stok.csv
 ## DEBUG TRUE
-# yol = os.path.join("Dokumanlar","09_ProjeOrnegi","db","{}")
+yol = os.path.join("Dokumanlar","09_ProjeOrnegi","db","{}")
 ## DEBUG FALSE
-yol = os.path.join("db","{}")
+# yol = os.path.join("db","{}")
 alanlar = []
 from tools import screentools as sct
 # # db/ayarlar.csv

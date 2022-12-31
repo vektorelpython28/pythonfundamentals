@@ -39,6 +39,29 @@ def stokmenu():
                     metin = dt.verigiris(dt.alanlar) 
                     kayitListe[int(kayitNum)-1] = metin
                     dt.dosyaListeKaydet(dosya, kayitListe)
+                if islem == 3:
+                    kayitListe = dt.dosyaOkuList(dosya)
+                    dt.verilistele(dosya)
+                    kayitNum = input("Silmek istediğiniz kaydın numarasını giriniz:")
+                    del kayitListe[int(kayitNum)-1]
+                    dt.dosyaListeKaydet(dosya, kayitListe)
+                    devam = input("Devam Etmek İçin Bir Tuşa Basınız:")
+                if islem == 4:
+                    sct.clear()
+                    results = []
+                    search = input("Anahtar Kelime ya da sayıyı giriniz (Tüm Kayıtlar İçin *): ")
+                    kayitListe = dt.dosyaOkuList(dosya)
+                    if search == "*":
+                        for num,item in enumerate(kayitListe):
+                            print(num,"-",*item.split(";"),end="")
+                    else:
+                        for num,item in enumerate(kayitListe):
+                            for rec in item.split(";"):
+                                if str(rec).count(search) > 0:
+                                    results.append((num,item))
+                        for num,result in results:
+                            print(num,"-",*result.split(";"),end="")
+                    devam = input("Devam Etmek İçin Bir Tuşa Basınız:")
 
             if islem == 7:
                 anahtar = 0
