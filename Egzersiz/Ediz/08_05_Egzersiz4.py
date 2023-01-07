@@ -4,8 +4,8 @@
     üç milyon iki yüz kırk dokuz bin iki yüz kırk beş olarak ifade etmelidir.
     """
 
-# sayi = input("Sayıyı Giriniz:")
-sayi = "3,249,245"
+sayi = input("Sayıyı Giriniz:")
+# sayi = "3,249,245"
 sayi = sayi.replace(",","").replace(".","")
 # print(sayi) # 3249245
 # zfill
@@ -24,13 +24,17 @@ birler = birler = {"0":"", "1":"Bİr", "2":"İki", "3":"Üç", "4":"Dört", "5":
 onlar = {"0":"","1":"On","2":"Yirmi","3":"Otuz","4":"Kırk","5":"Elli","6":"Altmış","7":"Yetmiş","8":"Seksen","9":"Doksan"}
 basamak = {0:"",1:"Bin",2:"Milyon",3:"Milyar"}
 sonuc = ""
-for item in liste:
+adim = 0
+for item in liste: #325
     sonuc = ""
     if item[0] != "0":
         if item[0] == "1":
             sonuc += " Yüz "
         else:
             sonuc += birler[item[0]] + " Yüz "
-    sonuc += onlar[item[1]]
-    sonuc += birler[item[2]]
+    sonuc += onlar[item[1]] + " "
+    sonuc += birler[item[2]] + " "
+
+    sonuc += basamak[(len(liste)-1)-adim] + " "
     print(sonuc)
+    adim +=1
