@@ -15,11 +15,8 @@ class Fenomen:
 
 Fnmn1 = Fenomen("İnternet Mahir", "I kiss you all")
 Fnmn2 = Fenomen("İsimsiz Vatandaş", "Erkan anektarlar koltuğun altında kalık beni ara")
-
 Fnmn3 = Fenomen("Webcamci Çocuk", "Al kırdın kırdın...")
-
 Fnmn4 = Fenomen("Katip Köksal", "Artiz mi? Artiz ne arar la bazarda")
-
 
 Fnmn1.isimSoyle()
 Fnmn1.sloganSoyle()

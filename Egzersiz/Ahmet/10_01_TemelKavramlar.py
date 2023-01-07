@@ -3,7 +3,8 @@ class Fenomen:
     def __init__(self, adi, slogan):
         self.adi = adi
         self.slogan = slogan
-    @classmethod(f)
+    @classmethod
+    
     def kimligi(self):
         print(self.adi, self.slogan)
 
