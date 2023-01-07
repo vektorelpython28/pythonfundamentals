@@ -5,17 +5,19 @@
 #* örnek metod çalıştırıldığında ilgili fenomenin ismi:slogan şeklinde bir çıktı üretsin
 
 class Fenomen:
-    tip = "İnternet Fenomeni" 
-    def __init__(self,isim,slogan): 
-        self.isim = isim 
+    tip = "İnternet Fenomenleri"
+    def __init__(self,isim,slogan):
+        self.isim = isim
         self.slogan = slogan
     
     @classmethod
-    def tipSoyle(cls): 
+    def tipSoyle(cls):
         print(cls.tip)
 
-    def isimSoyle(self): 
-        print(self.isim)
-
-Fenomen.tipSoyle()
-Fenomen.tip
+    def isimSoyle(self):
+        print(self.isim,": ",self.slogan)
+        
+fenomen1 = Fenomen("Cemalcan","sütlaç")
+fenomen2 = Fenomen("Ceyda Kasabalı","soğuk espiri")
+fenomen1.isimSoyle()
+fenomen2.isimSoyle()

@@ -7,8 +7,14 @@ class Fenomen:
     @classmethod
     def tipSoyle(cls):
         print(cls.tip)
-    def markaSöyle(self):
-        print(self.isim)
-    
-    Fenomen = Fenomen("Hadise" , "Acun ILICALI" , "Danla BİLİÇ")
-    Slogan = 
+
+    def isimsloganSoyle(self):
+        print(self.isim,":",self.slogan)
+
+fenomen1 = Fenomen("Danla BİLİÇ "," Evlen artık danla" )
+fenomen2 = Fenomen("Gülgün DİKİŞ" ,"Dedeye sahip çıkalım hihihhi!" )
+fenomen3 = Fenomen("Yurdagülün Annesi", "Ne anladın YURDAGÜL?") 
+
+liste = [fenomen1,fenomen2,fenomen3]
+for item in liste:
+    item.isimsloganSoyle()

@@ -1,18 +1,21 @@
 class Fenomen:
     tip = "İnternet Fenomenleri"
-    def __init__(self,isim,sloagan):
-        self.marka = isim
-        self.model = slogan
+    def __init__(self,isim,slogan):
+        self.isim = isim
+        self.slogan = slogan
     
     @classmethod
-    def isimSoyle(cls): # sınıf metodu
+    def tipSoyle(cls):
         print(cls.tip)
 
-    def sloganSoyle(self): # örnek metodu
-        print(self.marka)
+    def isimSoyle(self):
+        print(self.isim,": ",self.slogan)
 
-fenomen1 = ("Beyin Bedava Abi","Atıyorum kafaya beyin bedava")
-fenomen2 = ("Sivas Sporlu Dayı","Zabaha gadar burdayız")
 
-fenomen1.isimSoyle()
-fenomen2.solganSoyle()
+
+fenomen1 = Fenomen("Beyin Bedava Abi","Atıyorum kafaya beyin bedava")
+fenomen2 = Fenomen("Sivas Sporlu Dayı","Zabaha gadar burdayız")
+fenomen3 = Fenomen("İnternet Mahir","I kiss you")
+fenomen4 = Fenomen("Yurdagülün annesi","Ne anladın Yurdagül")
+
+fenomen2.isimSoyle()
