@@ -21,6 +21,11 @@ class Cokgen: # sınıf oluşması
     def aciSoyle(self, param):
         if isinstance(param,int) and param in range(1,11) and self.adi == "ucgen":
             self.__adi = param
+    @alver.aciSoyle
+    def aciSoyle(self):
+        if self.aci == 1:
+            self.__gizli = str(self.__gizli) + " Silinmeye Çalışıldı"
+
 
         
 ucgen = Cokgen(3,"ucgen")
