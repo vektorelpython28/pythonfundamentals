@@ -8,7 +8,7 @@ class Fenomen:
     def tipSoyle(cls):
         print(cls.tip)
 
-    def isimSoyle(self):
+    def fenomenSoyle(self):
         print(self.isim,": ",self.slogan)
 
 
@@ -18,4 +18,6 @@ fenomen2 = Fenomen("Sivas Sporlu Dayı","Zabaha gadar burdayız")
 fenomen3 = Fenomen("İnternet Mahir","I kiss you")
 fenomen4 = Fenomen("Yurdagülün annesi","Ne anladın Yurdagül")
 
-fenomen2.isimSoyle()
+liste = [fenomen1, fenomen2, fenomen3, fenomen4]
+for item in liste:
+    item.fenomenSoyle()
