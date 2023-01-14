@@ -5,7 +5,7 @@ class Hero:
         self.guc = guc
         self.saglik = saglik
         self.superGuc = superGuc
-    
+    @property
     def vur(self):
         return self.guc
 
@@ -36,7 +36,7 @@ class MarvelHero(Hero):
 class DCHero(Hero):
     def __init__(self,adi,guc,saglik):
         super().__init__(adi, guc, saglik)
-
+    @property
     def vur(self):
         liste = [self.vur1,self.vur2,self.vur3]
         return rnd.choice(liste)()
@@ -73,15 +73,63 @@ class Batman(DCHero):
     def __init__(self):
         super().__init__("Batman", 120, 1000)
 
+
+class TurkishHero(Hero):
+    def __init__(self,adi,guc,saglik):
+        super().__init__(adi, guc, saglik)
+
+    def darbe(self,vur): 
+        liste = [self.darbe1,self.darbe2,self.darbe3] 
+        rnd.choice(liste)(vur) 
+    
+    def darbe1(self,vur):
+        self.saglik -= vur*2
+
+    def darbe2(self,vur):
+        self.saglik -= vur*3
+    
+    def darbe3(self,vur):
+        self.saglik -= vur
+    @property
+    def vur(self):
+        liste = [self.vur1,self.vur2,self.vur3] 
+        return rnd.choice(liste)() 
+
+    def vur1(self):
+        return self.guc*2 
+    
+    def vur2(self):
+        return self.guc*3 
+    
+    def vur3(self):
+        return self.guc//2 
+
+
+
+
+class BattalGazi(TurkishHero):
+    def __init__(self): 
+        super().__init__("Battal Gazi", 170, 2000)
+
+
+class Tarkan(TurkishHero):
+    def __init__(self): 
+        super().__init__("Tarkan", 130, 1500)
+
+
+class Malkocoglu(TurkishHero):
+    def __init__(self): 
+        super().__init__("Malkoçoğlu", 100, 1000)
+
 dcList = [Batman,SuperMan]
 marvelList = [DeadPool,Hulk]
-
+turkishList =  [Malkocoglu,Tarkan,BattalGazi]
 import time
-P1 = rnd.choice(dcList)()
-P2 = rnd.choice(marvelList)()
+P1 = rnd.choice(rnd.choice([dcList,marvelList,turkishList]))()
+P2 = rnd.choice(rnd.choice([dcList,marvelList,turkishList]))()
 while P1.saglik > 0 and P2.saglik > 0:
-    P1.darbe(P2.vur())
-    P2.darbe(P1.vur())
+    P1.darbe(P2.vur)
+    P2.darbe(P1.vur)
     P1.bilgiVer()
     P2.bilgiVer()
     time.sleep(0.7)
@@ -101,3 +149,7 @@ ilgili farklılıklar olsun
 3 karakter Turkish Hero için
 1 er karakter ise DC ve Marvel için ekleyelim. 
 """
+ 
+
+
+ 
