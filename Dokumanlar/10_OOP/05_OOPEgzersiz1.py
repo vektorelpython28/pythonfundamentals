@@ -15,10 +15,22 @@ class Hero:
     def bilgiVer(self):
         print(self.adi,"=>",self.saglik)
 
+    def __str__(self):
+        return self.adi+"=>"+str(self.saglik)
+
+    def __sub__(self,obj):
+        self.saglik -= obj.vur
+        return self.saglik
+
 class MarvelHero(Hero):
     def __init__(self,adi,guc,saglik):
         super().__init__(adi, guc, saglik)
 
+    def __sub__(self,obj):
+        liste = [self.darbe1,self.darbe2,self.darbe3]
+        rnd.choice(liste)(obj.vur)
+        return self.saglik
+        
 
     def darbe(self,vur):
         liste = [self.darbe1,self.darbe2,self.darbe3]
@@ -78,9 +90,10 @@ class TurkishHero(Hero):
     def __init__(self,adi,guc,saglik):
         super().__init__(adi, guc, saglik)
 
-    def darbe(self,vur): 
-        liste = [self.darbe1,self.darbe2,self.darbe3] 
-        rnd.choice(liste)(vur) 
+    def __sub__(self,obj):
+        liste = [self.darbe1,self.darbe2,self.darbe3]
+        rnd.choice(liste)(obj.vur)
+        return self.saglik
     
     def darbe1(self,vur):
         self.saglik -= vur*2
@@ -128,10 +141,9 @@ import time
 P1 = rnd.choice(rnd.choice([dcList,marvelList,turkishList]))()
 P2 = rnd.choice(rnd.choice([dcList,marvelList,turkishList]))()
 while P1.saglik > 0 and P2.saglik > 0:
-    P1.darbe(P2.vur)
-    P2.darbe(P1.vur)
-    P1.bilgiVer()
-    P2.bilgiVer()
+    P1 - P2
+    P2 - P1
+    print(P1,P2)
     time.sleep(0.7)
 else:
     if P1.saglik>P2.saglik:
