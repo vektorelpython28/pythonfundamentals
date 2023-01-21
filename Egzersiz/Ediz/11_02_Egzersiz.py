@@ -1,18 +1,18 @@
+import sys
+sys.path.append(".")
 from dbbaglan import DBsql
 def selectOrnek():
     db = DBsql()
     sorgu = """
-    SELECT CustomerId,
-        FirstName,
-        LastName
-    FROM customers WHERE Country LIKE '' 
+SELECT
+art.ArtistId,art.Name,alb.AlbumId,alb.Title
+FROM albums as alb INNER JOIN
+artists as art ON  art.ArtistId = alb.ArtistId WHERE 
     """
     table = db.select(sorgu)
     from tabulate import tabulate
     print(tabulate(table))
 """
-Customer tablosunda ülke ismi U ile 
-başlayan müşterilerin
-ismi A ile başlayanlarını
-bilgilerini City Sütununa göre sıralayınız
+artist ismi Bl ile başlayan sanatçıların albumlerini 
+listeleyen sorguyu yazınız.
 """ 
