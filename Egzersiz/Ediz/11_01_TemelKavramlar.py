@@ -4,28 +4,64 @@ from dbbaglan import DBsql
 def selectOrnek():
     db = DBsql()
     sorgu = """
-    SELECT CustomerId,
-        FirstName,
-        LastName
-    FROM customers WHERE FirstName LIKE 'F%'
+    SELECT *
+    FROM ORNEK
     """
     table = db.select(sorgu)
     from tabulate import tabulate
     print(tabulate(table))
 
-def insertOrnek():
+def insertOrnek(adi,soyadi):
     try:
         db = DBsql()
-        sorgu = """
+        sorgu = f"""
         INSERT INTO ORNEK (adi,soyadi) VALUES
-        ('İbrahim','EDİZ')
+        ('{adi}','{soyadi}')
         """
         sonuc = db.insert(sorgu)
+        db.db.commit()
         print(sonuc)
     except Exception as hata:
         print(hata)
+        db.db.rollback()
     finally:
-        del db
+        db.db.close()
+
+def updateOrnek(_id,adi,soyadi):
+    try:
+        db = DBsql()
+        sorgu = f"""
+                UPDATE ORNEK
+                    SET adi = '{adi}',
+                    soyadi = '{soyadi}'
+                WHERE ornekID = {_id}
+                """
+        sonuc = db.update(sorgu)
+        db.db.commit()
+        print(sonuc)
+    except Exception as hata:
+        print(hata)
+        db.db.rollback()
+    finally:
+        db.db.close()
+
+def deleteOrnek(sart=""):
+    try:
+        db = DBsql()
+        sorgu = f"""
+            DELETE FROM ornek WHERE {sart}
+        """
+        if db.delete(sorgu):
+            db.db.commit()
+        else:
+            raise Exception("HATAAAA")
+    except Exception as hata:
+        print(hata)
+        db.db.rollback()
+    finally:
+        db.db.close()
+
 
 if __name__ == "__main__":
-    insertOrnek()
+    deleteOrnek("ornekID=17 OR 1=1")
+    selectOrnek()

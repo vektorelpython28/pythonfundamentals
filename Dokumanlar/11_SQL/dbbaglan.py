@@ -12,18 +12,8 @@ class DBsql:
     def insert(self,sorgu):
         self.cur.execute(sorgu)
         return self.cur.lastrowid
-    
-    def update(self,sorgu):
-        self.cur.execute(sorgu)
-        return self.cur.lastrowid
 
-    def delete(self,sorgu):
-        try:
-            self.cur.execute(sorgu)
-            return True
-        except:
-            raise Exception("Veritabanı HATASI")
-
-        
-
+    def __del__(self):
+        self.db.commit()
+        self.db.close()
 

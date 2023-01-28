@@ -9,7 +9,7 @@ art.ArtistId,art.Name,alb.AlbumId,alb.Title
 FROM albums as alb INNER JOIN
 artists as art ON  art.ArtistId = alb.ArtistId
  WHERE art.Name LIKE 'Bl%'
-    """
+     """
     table = db.select(sorgu)
     from tabulate import tabulate
     print(tabulate(table))
